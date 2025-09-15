@@ -71,21 +71,21 @@ export default function GeneralInfo({ onBackClick, onNDAClick, onMoodboardClick 
             Logistics
           </h2>
           <ul className="space-y-4 text-lg md:text-xl" style={{ color: '#312F2C' }}>
-            <li className="flex items-start">
-              <span className="mr-3 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
-              <span>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
+              <span className="flex-1">
                 We have booked a hotel for everyone, no need to book your own accommodation. The hotel is called Al Destino and is located ~15-20 minutes outside of Marrakech
               </span>
             </li>
-            <li className="flex items-start">
-              <span className="mr-3 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
-              <span>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
+              <span className="flex-1">
                 We will be collecting $400 Venmos for partial compensation / accommodation for the weekend
               </span>
             </li>
-            <li className="flex items-start">
-              <span className="mr-3 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
-              <span>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
+              <span className="flex-1">
                 Please fill out mandatory{' '}
                 <motion.span 
                   className="underline font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200 touch-manipulation"
@@ -98,9 +98,9 @@ export default function GeneralInfo({ onBackClick, onNDAClick, onMoodboardClick 
                 </motion.span>
               </span>
             </li>
-            <li className="flex items-start">
-              <span className="mr-3 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
-              <span>
+            <li className="flex items-start gap-3">
+              <span className="flex-shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
+              <span className="flex-1">
                 There will be two themed nights (one at the hotel and one in the desert), please refer to{' '}
                 <motion.span 
                   className="underline font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200 touch-manipulation"

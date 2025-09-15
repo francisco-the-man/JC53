@@ -35,7 +35,7 @@ export default function Menu({ onMoodboardClick, onActivitiesClick, onGeneralInf
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-bold"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold whitespace-nowrap"
           style={{ color: '#F0EDE5' }}
         >
           Rock the Casbah

@@ -10,6 +10,8 @@ interface OpenerProps {
 
 export default function Opener({ onYesClick }: OpenerProps) {
   const [isMobile, setIsMobile] = useState(false);
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -22,12 +24,41 @@ export default function Opener({ onYesClick }: OpenerProps) {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
+  // Minimum distance for a swipe
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientY);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientY);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isUpSwipe = distance > minSwipeDistance;
+    
+    if (isUpSwipe) {
+      onYesClick();
+    }
+  };
+
   const handleClick = () => {
     onYesClick();
   };
 
   return (
-    <div className="relative w-full h-screen overflow-hidden flex items-center justify-center" style={{ backgroundColor: '#FF4400' }}>
+    <div 
+      className="relative w-full h-screen overflow-hidden flex items-center justify-center" 
+      style={{ backgroundColor: '#FF4400' }}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={onTouchEnd}
+    >
       {/* Full Width Casbah Container */}
       <div className="relative w-full h-screen z-0">
 
