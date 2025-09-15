@@ -54,7 +54,7 @@ export default function GeneralInfo({ onBackClick, onNDAClick, onMoodboardClick 
           className="mb-12"
         >
           <p className="text-lg md:text-xl leading-relaxed mb-4" style={{ color: '#312F2C' }}>
-            Very excited about this one and hoping you can join us. Some additional details on everyone's favorite topic (
+            Very excited about this one and hoping you can join us. Some additional details on everyone&apos;s favorite topic (
             <span className="underline font-medium">schedule</span> and{' '}
             <span className="underline font-medium">logistics</span>) here:
           </p>
@@ -150,7 +150,7 @@ export default function GeneralInfo({ onBackClick, onNDAClick, onMoodboardClick 
               <p><span className="font-medium">1:30pm</span> Lunch by the pool</p>
               <p><span className="font-medium">Activities</span></p>
               <p><span className="font-medium">8:30pm</span> Drinks at Hotel Sky Bar</p>
-              <p><span className="font-medium">9:45pm</span> "Casablanca Chic" Dinner at Hotel Pool</p>
+              <p><span className="font-medium">9:45pm</span> &quot;Casablanca Chic&quot; Dinner at Hotel Pool</p>
             </div>
           </div>
 

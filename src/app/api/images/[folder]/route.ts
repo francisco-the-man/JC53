@@ -4,10 +4,10 @@ import { join } from 'path';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { folder: string } }
+  { params }: { params: Promise<{ folder: string }> }
 ) {
   try {
-    const folder = params.folder;
+    const { folder } = await params;
     
     // Validate folder name to prevent directory traversal
     if (!['desert', 'casablanca'].includes(folder)) {

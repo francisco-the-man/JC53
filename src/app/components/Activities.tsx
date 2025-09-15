@@ -45,7 +45,7 @@ export default function Activities({ onBackClick }: ActivitiesProps) {
             Please sign our NDA
           </h1>
           <p className="text-xl sm:text-2xl md:text-3xl font-medium" style={{ color: '#FF4400' }}>
-            yes, it's mandatory
+            yes, it&apos;s mandatory
           </p>
         </motion.div>
 
