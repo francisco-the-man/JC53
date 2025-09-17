@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 interface GeneralInfoProps {
   onBackClick: () => void;
@@ -9,6 +10,12 @@ interface GeneralInfoProps {
 }
 
 export default function GeneralInfo({ onBackClick, onNDAClick, onMoodboardClick }: GeneralInfoProps) {
+  const [showVenmoLinks, setShowVenmoLinks] = useState(false);
+
+  const handleVenmoClick = () => {
+    setShowVenmoLinks(!showVenmoLinks);
+  };
+
   return (
     <div className="relative w-full min-h-screen overflow-auto" style={{ backgroundColor: '#F0EDE5' }}>
       
@@ -74,13 +81,55 @@ export default function GeneralInfo({ onBackClick, onNDAClick, onMoodboardClick 
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
               <span className="flex-1">
-                We have booked a hotel for everyone, no need to book your own accommodation. The hotel is called Al Destino and is located ~15-20 minutes outside of Marrakech
+                We have booked a hotel 15 minutes outside of Marrakech for everyone, so no need to book your own accommodation.
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 mt-2 w-2 h-2 rounded-full" style={{ backgroundColor: '#312F2C' }}></span>
-              <span className="flex-1">
-                We will be collecting $400 Venmos for partial compensation / accommodation for the weekend
+              <span className="flex-1 relative">
+                We will be collecting $400{' '}
+                <div className="relative inline-block">
+                  <motion.span 
+                    className="underline font-medium cursor-pointer hover:opacity-70 transition-opacity duration-200 touch-manipulation"
+                    onClick={handleVenmoClick}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    style={{ minHeight: '44px', minWidth: '44px', padding: '4px' }}
+                  >
+                    Venmos
+                  </motion.span>
+                  {showVenmoLinks && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute top-full left-0 mt-2 bg-white rounded-lg shadow-lg border-2 p-3 z-50 min-w-[200px]"
+                      style={{ borderColor: '#312F2C' }}
+                    >
+                      <div className="flex flex-col space-y-2">
+                        <a
+                          href="https://venmo.com/u/clarissabronfman"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 underline text-base font-medium"
+                          onClick={() => setShowVenmoLinks(false)}
+                        >
+                          @clarissabronfman
+                        </a>
+                        <a
+                          href="https://venmo.com/u/jlouis97"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-600 hover:text-blue-800 underline text-base font-medium"
+                          onClick={() => setShowVenmoLinks(false)}
+                        >
+                          @jlouis97
+                        </a>
+                      </div>
+                    </motion.div>
+                  )}
+                </div>
+                {' '}for partial compensation / accommodation for the weekend
               </span>
             </li>
             <li className="flex items-start gap-3">
