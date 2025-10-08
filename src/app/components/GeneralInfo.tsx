@@ -199,7 +199,7 @@ export default function GeneralInfo({ onBackClick, onNDAClick, onMoodboardClick 
               <p><span className="font-medium">1:30pm</span> Lunch by the pool</p>
               <p><span className="font-medium">Activities</span></p>
               <p><span className="font-medium">8:30pm</span> Drinks at Hotel Sky Bar</p>
-              <p><span className="font-medium">9:45pm</span> &quot;Casablanca Chic&quot; Dinner at Hotel Pool</p>
+              <p><span className="font-medium">9:45pm</span> &quot;Casablanca Chic&quot; 30th Birthday Dinner at Hotel Pool</p>
             </div>
           </div>
 
